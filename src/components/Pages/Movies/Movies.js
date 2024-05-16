@@ -3,17 +3,12 @@ import {useEffect, useState} from "react";
 import SingleContent from "../../SingleContent/SingleContent";
 import "./Movie.css";
 import CustomPagination from "../../Pagination/CustomPagination";
-import Genres from "../../Genres/Genres";
-import useGenre from "../../CustomHooks/useGenre";
 const Movies = () => {
     const [page,setPage] = useState(1);
     const [content, setContent] = useState([]);
     const [numOfPages, setNumOfPages] = useState();
-    const [selectedGenres, setSelectedGenres] = useState([]);
-    const [genres,setGenres]  = useState([]);
-    const genreForURL = useGenre(selectedGenres);
     const fetchMovies = async() =>{
-        const movieUrl = `https://api.themoviedb.org/3/trending/movie/day?language=en-US&page=${page}&with_genres=${genreForURL}`
+        const movieUrl = `https://api.themoviedb.org/3/trending/movie/day?language=en-US&page=${page}`
         const response = await axios({
             url: movieUrl,
             method: "GET",
@@ -27,7 +22,8 @@ const Movies = () => {
     }
     useEffect(()=>{
         fetchMovies()
-        },[genreForURL,page])
+        // eslint-disable-next-line
+        },[page])
     return(
         <div>
             <span className="pageTitle">Movies</span>

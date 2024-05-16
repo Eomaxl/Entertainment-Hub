@@ -21,7 +21,9 @@ const Series = () =>{
         setContent(response.data.results);
         setNumOfPages(response.data.total_pages);
     }
-    useEffect(()=>{fetchSeries()},[page]);
+    useEffect(()=>{fetchSeries()}
+    // eslint-disable-next-line
+     ,[page]);
     return(
         <div>
             <span className="pageTitle">Series</span>

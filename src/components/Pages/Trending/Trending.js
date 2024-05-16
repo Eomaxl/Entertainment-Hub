@@ -21,7 +21,9 @@ const Trending = () =>{
         });
         setContent(response.data.results);
     }
-    useEffect(() => {fetchTrending();},[page])
+    useEffect(() => {fetchTrending();
+        // eslint-disable-next-line
+        },[page])
     return(
         <div>
             <span className="pageTitle">Trending</span>
