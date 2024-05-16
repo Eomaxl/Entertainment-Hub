@@ -26,7 +26,6 @@ const Movies = () => {
         setNumOfPages(response.data.total_pages);
     }
     useEffect(()=>{
-        // eslint-disable-next-lin
         fetchMovies()
         },[genreForURL,page])
     return(
