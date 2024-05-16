@@ -15,8 +15,7 @@ const Trending = () =>{
             method: "GET",
             headers: {
                 accept: 'application/json',
-                Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlODMzODAxODRiYWYzYTczNzdkN2E3Y2U2NmExNDY0NSIsInN1YiI6IjY0MjNlNDIzYzA0NDI5MDI2YjExOTdmYSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.zoWlO8e_c4F8y5KakmzSx8Wl00cyZAFtkbnuYJVToFE'
-               // Authorization: `Bearer ${process.env.REACT_APP_API_ACCESS_TOKEN}`,
+                Authorization: `Bearer ${process.env.REACT_APP_API_ACCESS_TOKEN}`
             }
         });
         setContent(response.data.results);
