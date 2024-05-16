@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# Entertainment Hub site for find all the trending movies and tv series
 
 This project is live at 
 https://roaring-salamander-999c47.netlify.app/
